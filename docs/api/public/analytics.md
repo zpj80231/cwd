@@ -80,5 +80,64 @@ POST /api/analytics/visit
   ```json
   {
     "message": "记录访问数据失败"
-!  }
+  }
+  ```
+
+## 获取页面访问量
+
+```
+GET /api/analytics/pv
+```
+
+获取指定页面的访问量（PV），用于在前端展示页面访问次数。
+
+- 方法：`GET`
+- 路径：`/api/analytics/pv`
+- 鉴权：不需要
+
+**查询参数**
+
+| 名称        | 位置  | 类型   | 必填 | 说明                                      |
+| ----------- | ----- | ------ | ---- | ----------------------------------------- |
+| `post_slug` | query | string | 是   | 文章唯一标识符                            |
+| `siteId`    | query | string | 否   | 站点 ID，用于多站点数据隔离，默认 `default` |
+
+**成功响应**
+
+- 状态码：`200`
+
+```json
+{
+  "pv": 100,
+  "postSlug": "https://example.com/blog/hello-world"
+}
+```
+
+字段说明：
+
+| 字段名     | 类型   | 说明                     |
+| ---------- | ------ | ------------------------ |
+| `pv`       | number | 页面访问量（PV）         |
+| `postSlug` | string | 文章唯一标识符           |
+
+**错误响应**
+
+- 缺少 `post_slug`：
+
+  - 状态码：`400`
+
+  ```json
+  {
+    "message": "post_slug is required"
+  }
+  ```
+
+- 服务器内部错误：
+
+  - 状态码：`500`
+
+  ```json
+  {
+    "message": "获取访问量失败"
+  }
   ```

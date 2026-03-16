@@ -65,3 +65,12 @@ Token 通过登录接口获取，有效期为 48 小时。
 
 - **获取功能设置** `GET /admin/settings/feature` - 获取功能开关设置（评论点赞、文章点赞）
 - **更新功能设置** `PUT /admin/settings/feature` - 更新功能开关设置
+
+### [S3 备份相关](./admin/s3-backup.md)
+
+- **获取 S3 配置** `GET /admin/settings/s3` - 获取 S3 存储配置信息
+- **更新 S3 配置** `PUT /admin/settings/s3` - 更新 S3 存储配置信息
+- **触发备份** `POST /admin/backup/s3` - 手动触发数据备份到 S3
+- **获取备份列表** `GET /admin/backup/s3/list` - 获取 S3 存储中的备份文件列表
+- **下载备份** `GET /admin/backup/s3/download` - 从 S3 下载指定的备份文件
+- **删除备份** `DELETE /admin/backup/s3` - 删除 S3 存储中指定的备份文件

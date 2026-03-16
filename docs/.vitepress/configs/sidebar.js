@@ -24,6 +24,7 @@ export const rootSidebar = [
 		text: '配置',
 		items: [
 			{ text: '站点隔离', link: '/config/site-isolation' },
+			{ text: '页面浏览量', link: '/config/views-display'}
 		],
 	},
 	{ text: '反馈', link: '/guide/feedback' },
