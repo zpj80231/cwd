@@ -85,7 +85,7 @@ npm run preview
 
 ```bash
 # 开发环境
-cp .env.example .env
+cp .env.example .env.development
 ```
 
 每个环境文件中可配置以下变量：
